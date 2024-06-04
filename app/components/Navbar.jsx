@@ -24,9 +24,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed mx-auto shadow-xls top-0 left-0 right-0 z-10 bg-transparent bg-opacity-100">
-      <div className="flex left-0 right-0 container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+      <div className="flex left-0 right-0 container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2 pl-0">
      <Link href='/' className="flex items-start space-x-2 text-1xl md:text-3xl text-black font-semibold">
-     <img src="/white.png" alt="Cassio Logo" width="250" height="70" />
+     <img src="/white.png" alt="Cassio Logo" width="200" height="10" className="pl-0"/>
           {/* <span>Living Word</span> */}
         </Link>
         <div className="mobile-menu block md:hidden">
