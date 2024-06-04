@@ -18,11 +18,13 @@ const HomePage = () => {
           alt="background"
           className="object-cover w-full h-full"
         />
+        {/* <div className="absolute inset-0 bg-black opacity-60 z-0"></div> */}
 
+        <div className="relative z-50">
           <Navbar />
           {/* <HeroSection /> */}
        
-      
+      </div>
       
       <div className="container mx-auto px-12 py-4 mt-24">
         {/* <AboutSection /> */}
