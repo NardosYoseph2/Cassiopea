@@ -13,7 +13,7 @@ const EventCard = ({ imgUrl, title }) => {
       >
         <div className="absolute inset-0  "></div>
       </div>
-      <div className="text-black bg-white p-6">
+      <div className="text-[#FF6500] bg-white p-6">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         </div>
     </div>
