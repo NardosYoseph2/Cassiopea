@@ -28,12 +28,13 @@ const EmailSection = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative mb-0"
     >
+     
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
+        <h5 className="text-xl font-bold text-gray-900 my-2">
           Let&apos;s Connect
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-gray-900 mb-4 max-w-md">
           {" "}
           We&apos;re eager to hear from you! Whether you have inquiries about our services, want to discuss a potential project,
           we&apos;re here to assist you. Feel free to reach out to us via phone or email. Our team is dedicated to providing
@@ -55,16 +56,16 @@ const EmailSection = () => {
         <ul className="list-disc pl-2">
                <br></br>
           
-          <ul className="text-white">
-          <MapPinIcon className="h-6 w-6 inline mr-2 text-[#FF6500]" />
+          <ul className="text-gray-900">
+          <MapPinIcon className="h-6 w-6 inline mr-2 text-gray-900" />
             Addis Ababa,Ethiopia</ul>
             <br></br>
-            <ul className="text-white">   
-            < EnvelopeIcon className="h-6 w-6 inline mr-2 text-[#FF6500]" />
+            <ul className="text-gray-900">   
+            < EnvelopeIcon className="h-6 w-6 inline mr-2 text-gray-900" />
            Cassiopeia@gmail.com</ul>
             <br></br>
-            <ul className="text-white">
-            <PhoneIcon className="h-6 w-6 inline mr-2 text-[#FF6500]" />
+            <ul className="text-gray-900">
+            <PhoneIcon className="h-6 w-6 inline mr-2 text-gray-900" />
             +251903280511 - +251715280511</ul>
         </ul>
         </div>

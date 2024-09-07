@@ -1,77 +1,71 @@
 "use client";
-import React, { useState, useRef ,useEffect} from "react";
-import EventCard from "./ProjectCard";
-import { motion, useInView } from "framer-motion";
-
+import React, { useRef, useEffect, useState } from "react";
+import EventCard from "./ProjectCard"; // Ensure the correct path
 
 const EventSection = () => {
   const projectsData = [
+    { id: 1, title: "Web Development", image: "/webdev.jpg" },
+    { id: 2, title: "Mobile App Development", image: "/appdev.jpg" },
+    { id: 3, title: "API Integration", image: "/apii.jpg" },
+    { id: 4, title: "Ecommerce Development", image: "/ecommerce.jpg" },
+    { id: 5, title: "Software Consulting", image: "/consult.jpg" },
+    { id: 6, title: "Maintenance and Support", image: "/maintain.jpg" },
+  ];
 
-    {
-      id: 1,
-      title: "Web Development",
-      image: "/webdev.jpg",
-   
-    },
-    
-    {
-      id: 2,
-      title: "Mobile App Development",
-      image: "/appdev.jpg",
-   
-    },
-    {
-      id: 3,
-      title: "API Integration",
-      image: "/apii.jpg",
-   
-    },
-    {
-      id: 4,
-      title: "Ecommerce Development",
-      image: "/ecommerce.jpg",
-    },
-    {
-      id: 5,
-      title: "Software Consulting",
-      image: "/consult.jpg",
-    },
-    {
-      id: 6,
-      title: "Maintainance and Support",
-      image: "/maintain.jpg",
-    },
-]
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
- 
+  const scrollContainerRef = useRef(null);
+  const [currentHoveredIndex, setCurrentHoveredIndex] = useState(2); // Default middle card
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    let currentScroll = 0;
+    const scrollAmount = 2;
+    const cardWidth = 256; // Approximate width of each card
+    let autoScroll;
+
+    const handleAutoScroll = () => {
+      if (scrollContainer) {
+        scrollContainer.scrollLeft = currentScroll;
+        currentScroll += scrollAmount;
+
+        // Calculate the middle card based on the scroll position
+        const middleIndex = Math.floor(
+          (scrollContainer.scrollLeft + scrollContainer.clientWidth / 2) / cardWidth
+        );
+        setCurrentHoveredIndex(middleIndex % projectsData.length);
+
+        // Reset scroll when reaching the end
+        if (currentScroll >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+          currentScroll = 0;
+        }
+      }
+    };
+
+    // Start the auto-scrolling with an interval
+    autoScroll = setInterval(handleAutoScroll, 10);
+
+    // Cleanup on component unmount
+    return () => clearInterval(autoScroll);
+  }, []);
+
   return (
-    <section id="services">
-      <h2 className="text-center text-4xl font-bold text-white mt-8 mb-4 md:mb-8">
-      Our Services
+    <section id="services" className="py-12 bg-[#1E2044] w-full px-0">
+      <h2 className="text-center text-4xl font-bold text-gray-200 mb-8">
+        Our Services
       </h2>
-     
-      <ul ref={ref} className="grid top-0 md:grid-cols-2 gap-8 md:gap-12">
+      <div
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto space-x-8 pb-4 no-scrollbar"
+      >
         {projectsData.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+          <div
+            key={project.id}
+            className={`w-72 flex-shrink-0 transform transition-transform duration-600 "scale-100"
+            }`}
           >
-            <EventCard
-         key={project.id}
-         title={project.title}
-         imgUrl={project.image}
-            />
-          </motion.li>
+            <EventCard title={project.title} imgUrl={project.image} />
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

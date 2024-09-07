@@ -11,6 +11,14 @@
   background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value to control the darkness */
   z-index: 9999; /* Make sure it's on top of everything */
 }
+/* In your global CSS or a module CSS file */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 /* Your existing CSS */
 :root {
