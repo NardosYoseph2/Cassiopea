@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-start">
             {/* Company Info */}
             <div className="mb-8 md:mb-0">
-              <h3 className="text-2xl font-bold mb-4">CompanyName</h3>
+              <h3 className="text-2xl font-bold mb-4">Yeras Tech</h3>
               <p className="text-lg mb-4">
                 Your trusted partner in software solutions.
               </p>
