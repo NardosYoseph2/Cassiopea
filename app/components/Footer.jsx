@@ -61,7 +61,7 @@ const Footer = () => {
 
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
-            <p>&copy; {new Date().getFullYear()} CompanyName. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} YerasTech. All rights reserved.</p>
           </div>
         </div>
       </div>
