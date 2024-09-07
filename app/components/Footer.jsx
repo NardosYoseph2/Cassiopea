@@ -54,7 +54,7 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
               <p className="mb-2">1234 Software St, Tech City, TX 12345</p>
-              <p className="mb-2">Email: <a href="mailto:info@company.com" className="hover:text-gray-300 transition">info@company.com</a></p>
+              <p className="mb-2">Email: <a href="mailto:info@yerastech.com" className="hover:text-gray-300 transition">info@company.com</a></p>
               <p className="mb-2">Phone: <a href="tel:+1234567890" className="hover:text-gray-300 transition">+1 (234) 567-890</a></p>
             </div>
           </div>
