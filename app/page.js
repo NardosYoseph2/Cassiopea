@@ -6,7 +6,6 @@ import NewsSection from "@/app/components/newsSection";
 import TestimonalSection from "@/app/components/testimonalSection";
 import PartnerSection from "@/app/components/partnerSection";
 import ShowcaseSection from "@/app/components/showcase";
-import CertificateSection from "@/app/components/certificate";
 import EmailSection from "@/app/components/EmailSection";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";

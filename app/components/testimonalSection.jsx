@@ -42,7 +42,9 @@ const TestimonialSection = () => {
             className="bg-white shadow-lg rounded-lg p-8 max-w-sm"
           >
             <FaQuoteLeft className="text-gray-400 text-3xl mb-4" />
-            <p className="text-gray-600 italic mb-6">"{testimonial.testimony}"</p>
+            <p className="text-gray-600 italic mb-6">
+              &quot;{testimonial.testimony}&quot;
+            </p>
             <div className="flex items-center space-x-4">
               <img
                 src={testimonial.image}

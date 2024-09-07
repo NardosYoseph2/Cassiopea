@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa"; // Ensure you have react-icons installed
 
 const NewsSection = () => {
@@ -54,11 +55,15 @@ const NewsSection = () => {
             className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-lg overflow-hidden"
           >
             {/* Image Section */}
-            <img 
-              src={newsItem.image} 
-              alt={newsItem.title} 
-              className="w-full md:w-1/3 h-64 object-cover" 
-            />
+            <div className="relative w-full md:w-1/3 h-64">
+              <Image 
+                src={newsItem.image} 
+                alt={newsItem.title} 
+                layout="fill" 
+                objectFit="cover" 
+                className="object-cover"
+              />
+            </div>
             
             {/* Content Section */}
             <div className="p-6 w-full md:w-2/3">

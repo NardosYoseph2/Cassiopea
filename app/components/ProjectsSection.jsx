@@ -18,7 +18,7 @@ const EventSection = () => {
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     let currentScroll = 0;
-    const scrollAmount = 2;
+    const scrollAmount = 1; // Reduced scroll amount for slower scroll
     const cardWidth = 256; // Approximate width of each card
     let autoScroll;
 
@@ -41,7 +41,7 @@ const EventSection = () => {
     };
 
     // Start the auto-scrolling with an interval
-    autoScroll = setInterval(handleAutoScroll, 10);
+    autoScroll = setInterval(handleAutoScroll, 30); // Increased interval time for slower scroll
 
     // Cleanup on component unmount
     return () => clearInterval(autoScroll);
@@ -59,8 +59,7 @@ const EventSection = () => {
         {projectsData.map((project, index) => (
           <div
             key={project.id}
-            className={`w-72 flex-shrink-0 transform transition-transform duration-600 "scale-100"
-            }`}
+            className={`w-72 flex-shrink-0 transform transition-transform duration-800 scale-100`}
           >
             <EventCard title={project.title} imgUrl={project.image} />
           </div>
