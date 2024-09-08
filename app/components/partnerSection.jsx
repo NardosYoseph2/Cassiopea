@@ -5,7 +5,7 @@ import { motion } from "framer-motion"; // For animation effects
 const partnersData = [
   { id: 1, name: "Ayzot", logo: "/ayzot.jpg" },
   { id: 2, name: "Ejere Full Gospel", logo: "/logo1.jpg" },
-  { id: 3, name: "Partner 3", logo: "/jorka.png" },
+  // { id: 3, name: "Partner 3", logo: "/jorka.png" },
 ];
 
 const PartnersSection = () => {

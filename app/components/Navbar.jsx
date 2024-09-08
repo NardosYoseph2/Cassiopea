@@ -6,37 +6,27 @@ import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
 
 const navLinks = [
-  {
-    title: "Services",
-    path: "#services",
-  },
-  {
-    title: "News",
-    path: "#news",
-  },
-  {
-    title: "Partners",
-    path: "#partners",
-  },
-  {
-    title: "Testimony",
-    path: "#testimony",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
+  { title: "Services", path: "#services" },
+  { title: "News", path: "#news" },
+  { title: "Partners", path: "#partners" },
+  { title: "Testimony", path: "#testimony" },
+  { title: "Contact", path: "#contact" },
 ];
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  // Function to handle link click and close the navbar
+  const handleLinkClick = () => {
+    console.log("Link clicked, closing navbar..."); // Log to verify click event
+    setNavbarOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg backdrop-blur-lg transition-all duration-300 ease-in-out">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/yerasnew.png" alt="Company Logo" width={60} height={15} className="object-contain" />
-          {/* <span className="text-2xl font-semibold text-gray-800 hidden md:block">CompanyName</span> */}
         </Link>
 
         {/* Mobile Menu Button */}
@@ -61,13 +51,17 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link, index) => (
-            <NavLink key={index} href={link.path} title={link.title} />
+            <NavLink key={index} href={link.path} title={link.title} onClick={handleLinkClick} />
           ))}
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      {navbarOpen && <MenuOverlay links={navLinks} onClose={() => setNavbarOpen(false)} />}
+      {navbarOpen && (
+        <div className="md:hidden">
+          <MenuOverlay links={navLinks} onClose={handleLinkClick} />
+        </div>
+      )}
     </nav>
   );
 };

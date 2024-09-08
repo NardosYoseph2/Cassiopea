@@ -59,7 +59,7 @@ const EventSection = () => {
         {projectsData.map((project, index) => (
           <div
             key={project.id}
-            className={`w-72 flex-shrink-0 transform transition-transform duration-800 scale-100`}
+            className={`w-72 flex-shrink-0 transform transition-transform duration-400 scale-100`}
           >
             <EventCard title={project.title} imgUrl={project.image} />
           </div>
